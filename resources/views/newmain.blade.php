@@ -22,6 +22,13 @@
 <body class="flex items-center justify-center">
     <div class="container">
         <h1 class="flex items-center justify-center">Hello World!</h1>
+
+        @foreach ($tasks as $task)
+            <div>
+                <h3>{{ $task['name'] }}</h3>
+                <p>{{ $task['price'] }}</p>
+            </div>
+        @endforeach
     </div>
 </body>
 </html>
