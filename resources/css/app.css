@@ -1,4 +1,7 @@
 @import 'tailwindcss';
+@import "flowbite/src/themes/default";
+
+@plugin "flowbite/plugin";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -10,3 +13,34 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+.task-list {
+    & .item {
+        border: 1px solid #00000020;
+        border-radius: 10px;
+        transition: all .5s ease;
+        background-color: #F7F8FF;
+        padding: 20px;
+        gap: 15px;
+
+        &:hover {
+            transform: translateY(-10px);
+        }
+
+        & > span {
+            padding: 5px 0;;
+        }
+
+        & .data_inactive {
+            bottom: 20px;
+            right: 20px;
+            padding: 5px 10px;
+        }
+
+        & .priority {
+            top: 20px;
+            right: 20px;
+            padding: 5px 10px;
+            border-radius: 16px;
+        }
+    }
+}
