@@ -44,3 +44,10 @@
         }
     }
 }
+
+.task-modal {
+    & .info {
+        display: flex;
+        flex-direction: column;
+    }
+}
