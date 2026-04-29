@@ -29,7 +29,10 @@
                     <span class="name w-auto text-2xl font-semibold">{{ $task['name'] }}</span>
                     <span class="text-lg">{{ $task['project'] }}</span>
                     <span class="data_inactive text-sm absolute block z-1 bg-red-200 rounded-2xl">{{ $task['data_inactive'] }}</span>
-                    <span class="priority absolute block z-1 bg-yellow-200 rounded-2xl">{{ $task['priority'] }}</span>
+                    <div class="absolute status_wrapper flex gap-2 md:gap-4">
+                        <span class="priority block z-1 bg-yellow-200 rounded-2xl">{{ $task['priority'] }}</span>
+                        <span class="status {{ $task['status_code'] }} block z-1 bg-yellow-200 rounded-2xl">{{ $task['status'] }}</span>
+                    </div>
                 </div>
             @endforeach
         </div>
@@ -89,8 +92,8 @@
                         </div>
                         <!-- Modal footer -->
                         <div class="flex items-center border-t border-default space-x-4 pt-4 md:pt-5">
-                            <button data-modal-hide="default-modal-{{ $task['id'] }}" type="button" class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">I accept</button>
-                            <button data-modal-hide="default-modal-{{ $task['id'] }}" type="button" class="text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">Decline</button>
+                            <button data-modal-hide="default-modal-{{ $task['id'] }}" type="button" class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-md text-sm px-4 py-2.5 focus:outline-none">Начать задачу</button>
+                            <button data-modal-hide="default-modal-{{ $task['id'] }}" type="button" class="text-white bg-red-500 box-border border border-default-medium hover:bg-red-700 focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-md text-sm px-4 py-2.5 focus:outline-none">Закрыть задачу</button>
                         </div>
                     </div>
                 </div>
