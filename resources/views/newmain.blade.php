@@ -21,7 +21,6 @@
 </head>
 <body class="flex items-center justify-center">
     <div class="container">
-        <h1 class="flex items-center justify-center">Hello World!</h1>
 
         <div class="task-list flex flex-col gap-4">
             @foreach ($tasks as $task)
@@ -48,11 +47,19 @@
                             <div class="text-xl md:text-2xl font-medium text-heading"> {{ $task['name'] }} </div>
                             <button type="button" class="text-body bg-transparent hover:bg-neutral-tertiary hover:text-heading rounded-base text-sm w-9 h-9 ms-auto inline-flex justify-center items-center" data-modal-hide="default-modal-{{ $task['id'] }}">
                                 <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/></svg>
-                                <span class="sr-only">Close modal</span>
+                                <span class="sr-only">Закрыть</span>
                             </button>
                         </div>
                         <!-- Modal body -->
                         <div class="info space-y-4 md:space-y-6 py-4 md:py-6">
+                            <div class="flex items-center gap-2 md:gap-3">
+                                <div class="text-lg">Проект:</div>
+                                <div>{{ $task['project'] }}</div>
+                            </div>
+                            <div class="flex items-center gap-2 md:gap-3">
+                                <div class="text-lg">Приоритет:</div>
+                                <div class="priority">{{ $task['priority'] }}</div>
+                            </div>
                             <div class="flex flex-col gap-2 md:gap-3">
                                 <div class="text-lg">Описание задачи:</div>
                                 <div class="text-body leading-relaxed">{{ $task['description'] }}</div>
@@ -72,14 +79,6 @@
                             <div class="flex items-center gap-2 md:gap-3">
                                 <div class="text-lg">Крайний срок:</div>
                                 <div>{{ $task['data_inactive'] }}</div>
-                            </div>
-                            <div class="flex items-center gap-2 md:gap-3">
-                                <div class="text-lg">Приоритет:</div>
-                                <div>{{ $task['priority'] }}</div>
-                            </div>
-                            <div class="flex items-center gap-2 md:gap-3">
-                                <div class="text-lg">Проект:</div>
-                                <div>{{ $task['project'] }}</div>
                             </div>
                             <div class="flex flex-col gap-2 md:gap-3">
                                 <div class="text-lg">Прикреплённые файлы:</div>

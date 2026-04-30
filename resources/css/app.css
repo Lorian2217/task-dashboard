@@ -63,3 +63,17 @@
         flex-direction: column;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .task-list {
+        padding: 0px 20px;
+
+        & .item {
+            height: 200px;
+
+            & .name {
+                padding-top: 50px;
+            }
+        }
+    }
+}
